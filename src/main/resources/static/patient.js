@@ -17,8 +17,14 @@ const PATIENT = {
 };
 
 function NaarWebsite(id, waarde) {
-    document.getElementById(id).textContent = waarde ?? "Niet aangegeven";
+    if (waarde == null || waarde == undefined || waarde == ""){
+        document.getElementById(id).textContent = "Niet aangegeven";
+
+    } else {
+        document.getElementById(id).textContent = waarde
+    }
 }
+
 
 NaarWebsite("PersoonID", PATIENT.Persoon.PersoonID);
 NaarWebsite("Voornaam", PATIENT.Persoon.Naam.Voornaam);
@@ -31,4 +37,4 @@ NaarWebsite("Systeemrol", PATIENT.Persoon.Systeemrol);
 NaarWebsite("Geslacht", PATIENT.Geslacht);
 NaarWebsite("Geboortedatum", PATIENT.Geboortedatum);
 NaarWebsite("IQ", PATIENT.IQ);
-NaarWebsite("Aantekeningen", PATIENT.IQ);
+NaarWebsite("Aantekeningen", PATIENT.Aantekeningen);
